@@ -237,7 +237,7 @@ with open("config.txt", "w", encoding="utf-8") as file:
         if i == 0:
             config_string = "#🌐已更新于" + final_string + " | 每15分钟都会更新配置"
         else:
-            config_string = "#🌐服务器" + str(i) + " | " + str(final_others_string) + "|bin1site1.github.io "
+            config_string = "#🌐服务器" + str(i) + " | " + str(final_others_string) + " |bin1site1.github.io "
         config_final = code + config_string
         file.write(config_final + "\n")
         i += 1
