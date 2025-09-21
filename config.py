@@ -168,7 +168,7 @@ newaddresses = [
 
 
 ]
-
+# 定义去重函数，输入列表，返回去重后的列表
 def remove_duplicates(input_list):
     unique_list = []
     for item in input_list:
@@ -176,51 +176,57 @@ def remove_duplicates(input_list):
             unique_list.append(item)
     return unique_list
 
+html_pages = []  # 用于存储每个网页的HTML内容
 
-html_pages = []
-
+# 遍历所有地址，获取网页内容
 for url in newaddresses:
-    response = requests.get(url)
-    html_pages.append(response.text)
+    response = requests.get(url)  # 发送GET请求
+    html_pages.append(response.text)  # 保存网页内容
 
-codes = []
+codes = []  # 用于存储所有抓取到的配置代码
 
+# 遍历所有HTML页面，解析并提取code标签内容
 for page in html_pages:
-    soup = BeautifulSoup(page, 'html.parser')
-    code_tags = soup.find_all('code')
+    soup = BeautifulSoup(page, 'html.parser')  # 解析HTML
+    code_tags = soup.find_all('code')  # 查找所有code标签
 
     for code_tag in code_tags:
-        code_content = code_tag.text.strip()
+        code_content = code_tag.text.strip()  # 获取并去除首尾空格
+        # 判断是否为目标协议的配置
         if "vless://" in code_content or "ss://" in code_content or "vmess://" in code_content or "trojan://" in code_content:
-            codes.append(code_content)
+            codes.append(code_content)  # 添加到codes列表
 
-codes = list(set(codes))  # Remove duplicates
+codes = list(set(codes))  # 去重
 
-processed_codes = []
+processed_codes = []  # 用于存储处理后的配置
 
+# 获取当前时间（上海时区）
 current_date_time = datetime.now(pytz.timezone('Asia/Shanghai'))
-current_month = current_date_time.strftime("%b")
-current_day = current_date_time.strftime("%d")
-updated_hour = current_date_time.strftime("%H")
-updated_minute = current_date_time.strftime("%M")
-final_string = f"{current_month}-{current_day} | {updated_hour}:{updated_minute}"
-final_others_string = f"{current_month}-{current_day}"
-config_string = "#✅ " + str(final_string) + "-"
+current_month = current_date_time.strftime("%b")  # 月份
+current_day = current_date_time.strftime("%d")    # 日期
+updated_hour = current_date_time.strftime("%H")   # 小时
+updated_minute = current_date_time.strftime("%M") # 分钟
+final_string = f"{current_month}-{current_day} | {updated_hour}:{updated_minute}"  # 格式化时间字符串
+final_others_string = f"{current_month}-{current_day}"  # 仅日期字符串
+config_string = "#✅ " + str(final_string) + "-"  # 配置头部字符串
 
+# 处理每个配置，去除#后面的内容
 for code in codes:
-    vmess_parts = code.split("vmess://")
-    vless_parts = code.split("vless://")
+    vmess_parts = code.split("vmess://")  # 分割vmess协议
+    vless_parts = code.split("vless://")  # 分割vless协议
 
     for part in vmess_parts + vless_parts:
+        # 判断是否为目标协议
         if "ss://" in part or "vmess://" in part or "vless://" in part or "trojan://" in part:
-            service_name = part.split("serviceName=")[-1].split("&")[0]
-            processed_part = part.split("#")[0]
-            processed_codes.append(processed_part)
+            service_name = part.split("serviceName=")[-1].split("&")[0]  # 提取serviceName参数
+            processed_part = part.split("#")[0]  # 去除#后面的内容
+            processed_codes.append(processed_part)  # 添加到处理后的列表
 
-processed_codes = remove_duplicates(processed_codes)
+processed_codes = remove_duplicates(processed_codes)  # 再次去重
 
-new_processed_codes = []
+new_processed_codes = []  # 用于存储最终处理后的配置
 
+# 再次处理配置，去除#后面的内容
 for code in processed_codes:
     vmess_parts = code.split("vmess://")
     vless_parts = code.split("vless://")
