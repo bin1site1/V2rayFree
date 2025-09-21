@@ -32,7 +32,7 @@ newaddresses = [
 "https://t.me/s/FreeV2rays",
 "https://t.me/s/freev2rayssr",
 "https://t.me/s/FreeVlessVpn",
-"https://t.me/s/frev2ray",
+"https://t.me/s/frev2ray"
 "https://t.me/s/frev2rayng",
 "https://t.me/s/God_CONFIG",
 "https://t.me/s/HTTPCustomLand",
@@ -164,6 +164,7 @@ newaddresses = [
 "https://t.me/s/lexernet",
 "https://t.me/s/AblNet7",
 "https://t.me/s/manzariyeh_rasht",
+"https://t.me/s/Farah_VPN",
 
 
 ]
@@ -197,23 +198,11 @@ codes = list(set(codes))  # Remove duplicates
 
 processed_codes = []
 
-# Get the current date and time
-current_date_time = jdatetime.datetime.now(pytz.timezone('Asia/Tehran'))
-# Print the current month in letters
+current_date_time = datetime.now(pytz.timezone('Asia/Shanghai'))
 current_month = current_date_time.strftime("%b")
-
-# Get the current day as a string
 current_day = current_date_time.strftime("%d")
-
-# Increase the current hour by 4 hours
-#new_date_time = current_date_time + timedelta(hours=4)
-
-# Get the updated hour as a string
 updated_hour = current_date_time.strftime("%H")
-
 updated_minute = current_date_time.strftime("%M")
-
-# Combine the strings to form the final result
 final_string = f"{current_month}-{current_day} | {updated_hour}:{updated_minute}"
 final_others_string = f"{current_month}-{current_day}"
 config_string = "#✅ " + str(final_string) + "-"
