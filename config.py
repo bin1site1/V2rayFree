@@ -235,7 +235,7 @@ i = 0
 with open("config.txt", "w", encoding="utf-8") as file:
     for code in new_processed_codes:
         if i == 0:
-            config_string = "#🌐已更新于" + final_string + " | 每15分钟都会更新配置"
+            config_string = "#🌐已更新于" + config_string + " | 每15分钟更新配置"
         else:
             config_string = "#🌐服务器" + str(i) + " | " + str(final_others_string) + " |bin1site1.github.io "
         config_final = code + config_string
