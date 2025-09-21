@@ -165,6 +165,8 @@ newaddresses = [
 "https://t.me/s/AblNet7",
 "https://t.me/s/manzariyeh_rasht",
 "https://t.me/s/Farah_VPN",
+"https://t.me/s/SSRSUB",
+"https://t.me/s/Parsashonam",
 
 
 ]
