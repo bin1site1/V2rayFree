@@ -5,7 +5,7 @@ import pytz  # 导入pytz库，用于处理时区
 import jdatetime  # 导入jdatetime库，用于处理Jalali日期
 
 
-newaddresses = [
+newaddresses = list(set([
 "https://t.me/s/configV2rayForFree",
 "https://t.me/s/configV2rayNG",
 "https://t.me/s/DailyV2RY",
@@ -79,15 +79,11 @@ newaddresses = [
 "https://t.me/s/Farah_VPN",
 "https://t.me/s/SSRSUB",
 "https://t.me/s/Parsashonam",
-"https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/vmess.txt",
+"https://raw.githubusercontent.com/Jsnzkpg/Jsnzkpg/Jsnzkpg/Jsnzkpg",
 "https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/vmess.txt",
 "https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/vless.txt",
-"https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/vless.txt",
-"https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/trojan.txt",
 "https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/trojan.txt",
 "https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/ss.txt",
-"https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/ss.txt",
-"https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/ssr.txt",
 "https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/ssr.txt",
 "https://raw.githubusercontent.com/barry-far/V2ray-config/main/Sub1.txt",
 "https://raw.githubusercontent.com/barry-far/V2ray-config/main/Sub2.txt",
@@ -119,9 +115,6 @@ newaddresses = [
 "https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Sub13.txt",
 "https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Sub14.txt",
 "https://vpny.online/VPNy.json",
-"https://github.com/Epodonios/v2ray-configs/raw/main/Splitted-By-Protocol/ss.txt",
-"https://github.com/Epodonios/v2ray-configs/raw/main/Splitted-By-Protocol/vmess.txt",
-"https://github.com/Epodonios/v2ray-configs/raw/main/Splitted-By-Protocol/trojan.txt",
 "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/super-sub.txt",
 "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/subs/sub1.txt",
 "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/filtered/subs/ss.txt",
@@ -131,9 +124,6 @@ newaddresses = [
 "https://raw.githubusercontent.com/STR97/STRUGOV/refs/heads/main/Vless",
 "https://raw.githubusercontent.com/NiREvil/vless/refs/heads/main/sub/SSTime",
 "https://raw.githubusercontent.com/darkvpnapp/CloudflarePlus/refs/heads/main/index.html",
-"https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/ss.txt",
-"https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/vmess.txt",
-"https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/vless.txt",
 "https://dev1.irdevs.sbs",
 "https://v2.alicivil.workers.dev",
 "https://v2.alicivil.workers.dev/?list=us&count=300&shuffle=true&unique=false",
@@ -143,7 +133,6 @@ newaddresses = [
 "https://raw.githubusercontent.com/Surfboardv2ray/TGParse/main/splitted/mixed",
 "https://raw.githubusercontent.com/Surfboardv2ray/TGParse/main/python/hysteria2",
 "https://shadowmere.xyz/api/b64sub",
-"https://openproxylist.com/v2ray/",
 "https://openproxylist.com/v2ray/",
 "https://raw.githubusercontent.com/NiREvil/vless/refs/heads/main/sub/fragment",
 "https://raw.githubusercontent.com/SoliSpirit/v2ray-configs/refs/heads/main/Protocols/ss.txt",
@@ -202,10 +191,6 @@ newaddresses = [
 "https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Sub2.txt",
 "https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Sub3.txt",
 "https://github.com/Epodonios/v2ray-configs/raw/main/All_Configs_base64_Sub.txt",
-"https://raw.githubusercontent.com/barry-far/V2ray-config/main/Sub1.txt",
-"https://raw.githubusercontent.com/barry-far/V2ray-config/main/Sub2.txt",
-"https://raw.githubusercontent.com/barry-far/V2ray-config/main/Sub3.txt",
-"https://raw.githubusercontent.com/barry-far/V2ray-config/main/Sub4.txt",
 "https://raw.githubusercontent.com/aqayerez/MatnOfficial-VPN/refs/heads/main/MatnOfficial#MatnOfficial",
 "https://raw.githubusercontent.com/V2RAYCONFIGSPOOL/V2RAY_SUB/refs/heads/main/v2ray_configs.txt",
 "https://raw.githubusercontent.com/bamdad23/JavidnamanIran/refs/heads/main/WS%2BHysteria2",
@@ -221,15 +206,14 @@ newaddresses = [
 "https://raw.githubusercontent.com/AzadNetCH/Clash/refs/heads/main/AzadNet_iOS.txt",
 "https://raw.githubusercontent.com/Proxydaemitelegram/Proxydaemi44/refs/heads/main/Proxydaemi44",
 "https://raw.githubusercontent.com/MrMohebi/xray-proxy-grabber-telegram/refs/heads/master/collected-proxies/xray-json-full/actives_all.json",
-"https://raw.githubusercontent.com/barry-far/V2ray-config/main/Sub6.txt",
-"https://raw.githubusercontent.com/barry-far/V2ray-config/main/Sub7.txt",
-"https://raw.githubusercontent.com/barry-far/V2ray-config/main/Sub8.txt",
 "https://raw.githubusercontent.com/barry-far/V2ray-Configs/main/Sub9.txt",
 "https://azadnet05.pages.dev/sub/4d794980-54c0-4fcb-8def-c2beaecadbad#EN-Normal",
 "https://raw.githubusercontent.com/amirparsaxs/Vip-s/refs/heads/main/Sub.vip",
 "https://raw.githubusercontent.com/rango-cfs/NewCollector/refs/heads/main/v2ray_links.txt",
 
-]
+
+
+]))
 # 定义去重函数，输入列表，返回去重后的列表
 def remove_duplicates(input_list):
     unique_list = []
