@@ -97,7 +97,27 @@ newaddresses = [
 "https://raw.githubusercontent.com/barry-far/V2ray-config/main/Sub6.txt",
 "https://raw.githubusercontent.com/barry-far/V2ray-config/main/Sub7.txt",
 "https://raw.githubusercontent.com/barry-far/V2ray-config/main/Sub8.txt",
-
+"https://github.com/Epodonios/v2ray-configs/raw/main/All_Configs_Sub.txt",
+"https://github.com/Epodonios/v2ray-configs/raw/main/All_Configs_base64_Sub.txt",
+"https://github.com/Epodonios/v2ray-configs/raw/main/Splitted-By-Protocol/vless.txt",
+"https://github.com/Epodonios/v2ray-configs/raw/main/Splitted-By-Protocol/vmess.txt",
+"https://github.com/Epodonios/v2ray-configs/raw/main/Splitted-By-Protocol/ss.txt",
+"https://github.com/Epodonios/v2ray-configs/raw/main/Splitted-By-Protocol/ssr.txt",
+"https://github.com/Epodonios/v2ray-configs/raw/main/Splitted-By-Protocol/trojan.txt",
+"https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Sub1.txt",
+"https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Sub2.txt",
+"https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Sub3.txt",
+"https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Sub4.txt",
+"https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Sub5.txt",
+"https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Sub6.txt",
+"https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Sub7.txt",
+"https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Sub8.txt",
+"https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Sub9.txt",
+"https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Sub10.txt",
+"https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Sub11.txt",
+"https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Sub12.txt",
+"https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Sub13.txt",
+"https://raw.githubusercontent.com/Epodonios/v2ray-configs/refs/heads/main/Sub14.txt",
 
 
 ]
