@@ -89,6 +89,16 @@ newaddresses = [
 "https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/ss.txt",
 "https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/ssr.txt",
 "https://raw.githubusercontent.com/barry-far/V2ray-config/main/Splitted-By-Protocol/ssr.txt",
+"https://raw.githubusercontent.com/barry-far/V2ray-config/main/Sub1.txt",
+"https://raw.githubusercontent.com/barry-far/V2ray-config/main/Sub2.txt",
+"https://raw.githubusercontent.com/barry-far/V2ray-config/main/Sub3.txt",
+"https://raw.githubusercontent.com/barry-far/V2ray-config/main/Sub4.txt",
+"https://raw.githubusercontent.com/barry-far/V2ray-config/main/Sub5.txt",
+"https://raw.githubusercontent.com/barry-far/V2ray-config/main/Sub6.txt",
+"https://raw.githubusercontent.com/barry-far/V2ray-config/main/Sub7.txt",
+"https://raw.githubusercontent.com/barry-far/V2ray-config/main/Sub8.txt",
+
+
 
 ]
 # 定义去重函数，输入列表，返回去重后的列表
