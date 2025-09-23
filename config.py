@@ -122,12 +122,12 @@ processed_codes = []  # 用于存储处理后的配置
 
 # 获取当前时间（上海时区）
 current_date_time = datetime.now(pytz.timezone('Asia/Shanghai'))
-current_month = current_date_time.strftime("%b")  # 月份
+current_month = current_date_time.strftime("%m")  # 月份（数字）
 current_day = current_date_time.strftime("%d")    # 日期
 updated_hour = current_date_time.strftime("%H")   # 小时
 updated_minute = current_date_time.strftime("%M") # 分钟
-final_string = f"{current_month}-{current_day} | {updated_hour}:{updated_minute}"  # 格式化时间字符串
-final_others_string = f"{current_month}-{current_day}"  # 仅日期字符串
+final_string = f"{current_month}月{current_day}日 | {updated_hour}:{updated_minute}"  # 中文格式时间字符串
+final_others_string = f"{current_month}月{current_day}日"  # 仅日期字符串
 config_string = "#✅ " + str(final_string) + "-"  # 配置头部字符串
 
 # 处理每个配置，去除#后面的内容
