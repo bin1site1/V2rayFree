@@ -168,7 +168,7 @@ i = 0  # 初始化服务器计数器
 with open("config.txt", "w", encoding="utf-8") as file:  # 以写入模式打开文件
     for code in new_processed_codes:
         if i == 0:
-            config_string = "#🌐已更新于" + config_string + " | 每15分钟更新配置"  # 第一行写更新时间
+            config_string = "#🌐已更新于" + config_string + " | 每15分钟更新一次"  # 第一行写更新时间
         else:
             config_string = "#🌐服务器" + str(i) + " | " + str(final_others_string) + " |bin1site1.github.io "  # 其他行写服务器编号和日期
         config_final = code + config_string  # 拼接配置和注释
