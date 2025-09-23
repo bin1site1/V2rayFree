@@ -1,9 +1,8 @@
-import requests
-from bs4 import BeautifulSoup
-from datetime import datetime, timezone
-import pytz
-import jdatetime
-
+import requests  # 导入requests库，用于发送HTTP请求
+from bs4 import BeautifulSoup  # 导入BeautifulSoup库，用于解析HTML
+from datetime import datetime, timezone  # 导入datetime库，用于处理日期和时间
+import pytz  # 导入pytz库，用于处理时区
+import jdatetime  # 导入jdatetime库，用于处理Jalali日期
 
 
 newaddresses = [
@@ -195,7 +194,13 @@ for page in html_pages:
     for code_tag in code_tags:
         code_content = code_tag.text.strip()  # 获取并去除首尾空格
         # 判断是否为目标协议的配置
-        if "vless://" in code_content or "ss://" in code_content or "vmess://" in code_content or "trojan://" in code_content:
+        if (
+            "vless://" in code_content
+            or "ss://" in code_content
+            or "vmess://" in code_content
+            or "trojan://" in code_content
+            or "ssr://" in code_content  # 添加ssr协议
+        ):
             codes.append(code_content)  # 添加到codes列表
 
 codes = list(set(codes))  # 去重
@@ -219,7 +224,13 @@ for code in codes:
 
     for part in vmess_parts + vless_parts:
         # 判断是否为目标协议
-        if "ss://" in part or "vmess://" in part or "vless://" in part or "trojan://" in part:
+        if (
+            "ss://" in part
+            or "vmess://" in part
+            or "vless://" in part
+            or "trojan://" in part
+            or "ssr://" in part  # 添加SSR协议支持
+        ):
             service_name = part.split("serviceName=")[-1].split("&")[0]  # 提取serviceName参数
             processed_part = part.split("#")[0]  # 去除#后面的内容
             processed_codes.append(processed_part)  # 添加到处理后的列表
@@ -230,22 +241,23 @@ new_processed_codes = []  # 用于存储最终处理后的配置
 
 # 再次处理配置，去除#后面的内容
 for code in processed_codes:
-    vmess_parts = code.split("vmess://")
-    vless_parts = code.split("vless://")
+    vmess_parts = code.split("vmess://")  # 分割vmess协议
+    vless_parts = code.split("vless://")  # 分割vless协议
 
     for part in vmess_parts + vless_parts:
-        if "ss://" in part or "vmess://" in part or "vless://" in part or "trojan://" in part:
-            service_name = part.split("serviceName=")[-1].split("&")[0]
-            processed_part = part.split("#")[0]
-            new_processed_codes.append(processed_part)
+        # 判断是否为目标协议
+        if "ss://" in part or "vmess://" in part or "vless://" in part or "trojan://" in part or "ssr://" in part:
+            service_name = part.split("serviceName=")[-1].split("&")[0]  # 提取serviceName参数
+            processed_part = part.split("#")[0]  # 去除#后面的内容
+            new_processed_codes.append(processed_part)  # 添加到最终处理后的列表
 
-i = 0
-with open("config.txt", "w", encoding="utf-8") as file:
+i = 0  # 初始化服务器计数器
+with open("config.txt", "w", encoding="utf-8") as file:  # 以写入模式打开文件
     for code in new_processed_codes:
         if i == 0:
-            config_string = "#🌐已更新于" + final_string + " | 每15分钟更新配置"
+            config_string = "#🌐已更新于" + config_string + " | 每15分钟更新配置"  # 第一行写更新时间
         else:
-            config_string = "#🌐服务器" + str(i) + " | " + str(final_others_string) + " |bin1site1.github.io "
-        config_final = code + config_string
-        file.write(config_final + "\n")
-        i += 1
+            config_string = "#🌐服务器" + str(i) + " | " + str(final_others_string) + " |bin1site1.github.io "  # 其他行写服务器编号和日期
+        config_final = code + config_string  # 拼接配置和注释
+        file.write(config_final + "\n")  # 写入文件并换行
+        i += 1  # 服务器计数器加一
