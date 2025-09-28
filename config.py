@@ -1,3 +1,5 @@
+import re
+
 import requests  # 导入requests库，用于发送HTTP请求
 from bs4 import BeautifulSoup  # 导入BeautifulSoup库，用于解析HTML
 from datetime import datetime, timezone  # 导入datetime库，用于处理日期和时间
@@ -272,18 +274,41 @@ codes = []  # 用于存储所有抓取到的配置代码
 for page in html_pages:
     soup = BeautifulSoup(page, 'html.parser')  # 解析HTML
     code_tags = soup.find_all('code')  # 查找所有code标签
+    found_any = False
 
+    # 先从code标签里提取
     for code_tag in code_tags:
         code_content = code_tag.text.strip()  # 获取并去除首尾空格
-        # 判断是否为目标协议的配置
         if (
             "vless://" in code_content
             or "ss://" in code_content
             or "vmess://" in code_content
             or "trojan://" in code_content
-            or "ssr://" in code_content  # 添加ssr协议
+            or "ssr://" in code_content
         ):
-            codes.append(code_content)  # 添加到codes列表
+            codes.append(code_content)
+            found_any = True
+
+    # 如果存在a标签指向协议链接，也提取href
+    for a in soup.find_all('a', href=True):
+        href = a['href'].strip()
+        if (
+            href.startswith("vless://")
+            or href.startswith("ss://")
+            or href.startswith("vmess://")
+            or href.startswith("trojan://")
+            or href.startswith("ssr://")
+        ):
+            codes.append(href)
+            found_any = True
+
+    # 如果页面没有code标签或a标签，可能是纯文本(.txt)或html内包含裸协议，使用正则全局抓取
+    # 匹配到第一个非分隔字符为止（空白、引号、尖括号、右括号等作为终止）
+    if not found_any:
+        pattern = re.compile(r'(?:vmess|vless|ss|trojan|ssr)://[^\s\'"<>)]+', re.IGNORECASE)
+        matches = pattern.findall(page)
+        for m in matches:
+            codes.append(m.strip())
 
 codes = list(set(codes))  # 去重
 
