@@ -343,6 +343,25 @@ for code in codes:
             processed_codes.append(processed_part)  # 添加到处理后的列表
 
 processed_codes = remove_duplicates(processed_codes)  # 再次去重
+# 第三次去除重复节点：按规范化字符串去重并保留原始顺序
+seen = set()
+unique_processed = []
+for item in processed_codes:
+    norm = item.strip()
+    norm = norm.rstrip('/')
+    if '?' in norm:
+        norm = norm.split('?', 1)[0]
+    norm = norm.split('&', 1)[0].split(';', 1)[0]
+    if not norm.lower().startswith(('vmess://', 'vless://', 'ss://', 'trojan://', 'ssr://')):
+        for proto in ('vmess://', 'vless://', 'ss://', 'trojan://', 'ssr://'):
+            if proto in item.lower():
+                idx = item.lower().find(proto)
+                norm = item[idx:].split('#', 1)[0].split('?', 1)[0].strip().rstrip('/')
+                break
+    if norm not in seen:
+        seen.add(norm)
+        unique_processed.append(item)
+processed_codes = unique_processed
 
 new_processed_codes = []  # 用于存储最终处理后的配置
 
