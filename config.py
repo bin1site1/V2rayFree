@@ -82,7 +82,7 @@ newaddresses = [
     "https://t.me/s/SSRSUB",
     "https://t.me/s/Parsashonam",
     "https://raw.githubusercontent.com/Jsnzkpg/Jsnzkpg/Jsnzkpg/Jsnzkpg",
-"https://proxyshare.liaoyuan6666.workers.dev/",
+    "https://proxyshare.liaoyuan6666.workers.dev/",
 
 
 ]
